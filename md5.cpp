@@ -221,10 +221,9 @@ int main() {
 
         // Compute and print the MD5 hash
         vector<uint8_t> result = md5(reinterpret_cast<const uint8_t *>(message.c_str()), message.size());
-        cout << "MD5(\"" << message << "\") = " << toHexString(result) << endl;
+        cout << "MD5(\"\033[36m" << message << "\033[0m\") = " << "\033[35m" << toHexString(result) << "\033[0m"  << endl;
 
         // Ask if the user wants to continue
-
         string input;
         while (true) {
             cout << "Do you want to hash another message? (y/n): ";
