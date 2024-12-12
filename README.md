@@ -23,7 +23,7 @@ MD5 operates on input data blocks of 512 bits and produces a hash of 128 bits. S
 
 - Append a 1 bit to the input
 - Add 0 bits until the input length is 448 bits (64 bits less than a multiple of 512)
-- Append the original length of the input, represented in 64 bits using the little-endian format.
+- Append the original length of the input, represented in 64 bits using the little-endian format
 
 <img src="https://github.com/Marti-code/md5/blob/master/static/2-padding.png"/>
 
@@ -46,7 +46,7 @@ The output/buffer is initialized with four values derived from fractional parts 
 
 Each of the 64 iterations performs the following:
 
-- Copy B, C, and D into C', D', and A'.
+- Copy B, C, and D into C', D', and A'
 
   <img src="https://github.com/Marti-code/md5/blob/master/static/4-rotating.png"/>
 
@@ -54,7 +54,7 @@ Each of the 64 iterations performs the following:
 
   <img src="https://github.com/Marti-code/md5/blob/master/static/5.png"/>
 
-- Update A, B, C, D for the next iteration.
+- Update A, B, C, D for the next iteration
 
   <img src="https://github.com/Marti-code/md5/blob/master/static/6-buffer-update.png"/>
 
