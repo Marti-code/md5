@@ -2,7 +2,7 @@
 
 A C++ implementation of the MD5 hashing algorithm. This project demonstrates the process of computing an MD5 hash for any given input.
 
-<img src="https://github.com/Marti-code/yt-playlist-converter/blob/master/static/weload-desktop.jpg"/>
+<img src="https://github.com/Marti-code/md5/blob/master/static/1.png"/>
 
 ## Description
 
