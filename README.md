@@ -48,7 +48,7 @@ Each of the 64 iterations performs the following:
 
 - Copy B, C, and D into C', D', and A'
 
-  <img src="https://github.com/Marti-code/md5/blob/master/static/4-rotating.png"/>
+  <img src="https://github.com/Marti-code/md5/blob/master/static/4-rotation.png"/>
 
 - Calculate B' using the formula: B′=((F(B, C, D, i) + A + input[currentIdx] + K[i]) << r[i]) + B
 
@@ -95,7 +95,7 @@ Left rotation Amounts (r):
 
 After 64 iterations, the final A, B, C, D values are combined to produce the hash.
 
-<img src="https://github.com/Marti-code/md5/blob/master/static/7-end-result.png"/>
+<img src="https://github.com/Marti-code/md5/blob/master/static/7-final-result.png"/>
 
 ### Example iteration for i=0
 
