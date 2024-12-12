@@ -32,6 +32,7 @@ And even if the data were exactly 448 or 512 bits, the padding is still applied.
 ### Data processing
 
 The input is divided into 16 chunks of 32 bits each.
+
 <img src="https://github.com/Marti-code/md5/blob/master/static/3-input.png"/>
 
 The output/buffer is initialized with four values derived from fractional parts of square roots:
