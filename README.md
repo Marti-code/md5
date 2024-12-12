@@ -41,3 +41,25 @@ The output/buffer is initialized with four values derived from fractional parts 
 - B = 0xefcdab89 (√3)
 - C = 0x98badcfe (√5)
 - D = 0x10325476 (√7)
+
+### Iteration process
+
+Each of the 64 iterations performs the following:
+
+- Copy B, C, and D into C', D', and A'.
+
+  <img src="https://github.com/Marti-code/md5/blob/master/static/4-rotating.png"/>
+
+- Calculate B' using the formula: B′=((F(B, C, D, i) + A + input[currentIdx] + K[i]) << r[i]) + B
+
+  <img src="https://github.com/Marti-code/md5/blob/master/static/5.png"/>
+
+- Update A, B, C, D for the next iteration.
+
+  <img src="https://github.com/Marti-code/md5/blob/master/static/6-buffer-update.png"/>
+
+- Add the new A', B', C', D' values to the existing ones, modulo 2^32
+
+After 64 iterations, the final A, B, C, D values are combined to produce the hash.
+
+<img src="https://github.com/Marti-code/md5/blob/master/static/7-end-result.png"/>
