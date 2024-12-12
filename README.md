@@ -11,6 +11,12 @@ The result of MD5 is always a 128-bit hash, providing 2^128 possible unique hash
 
 ## How it works
 
+### Data conversion
+
+First we change our data into binary.
+
+<img src="https://github.com/Marti-code/md5/blob/master/static/0.png"/>
+
 ### Padding
 
 MD5 operates on input data blocks of 512 bits and produces a hash of 128 bits. Since input data is rarely exactly 512 bits in length, padding is applied:
@@ -18,3 +24,19 @@ MD5 operates on input data blocks of 512 bits and produces a hash of 128 bits. S
 - Append a 1 bit to the input
 - Add 0 bits until the input length is 448 bits (64 bits less than a multiple of 512)
 - Append the original length of the input, represented in 64 bits using the little-endian format.
+
+<img src="https://github.com/Marti-code/md5/blob/master/static/2-padding.png"/>
+
+And even if the data were exactly 448 or 512 bits, the padding is still applied. For example if the data is 448 bits: append 1, fill with 0 to reach 960 bits, and add the length at the end.
+
+### Data processing
+
+The input is divided into 16 chunks of 32 bits each.
+<img src="https://github.com/Marti-code/md5/blob/master/static/3-input.png"/>
+
+The output/buffer is initialized with four values derived from fractional parts of square roots:
+
+- A = 0x67452301 (√2)
+- B = 0xefcdab89 (√3)
+- C = 0x98badcfe (√5)
+- D = 0x10325476 (√7)
