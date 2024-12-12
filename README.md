@@ -87,7 +87,7 @@ Left rotation Amounts (r):
 - Round 3: r=[4,11,16,23, 4,11,16,23, 4,11,16,23, 4,11,16,23]
 - Round 4: r=[6,10,15,21, 6,10,15,21, 6,10,15,21, 6,10,15,21]
 
-<img src="https://github.com/Marti-code/md5/blob/master/static/5.png"/>
+<img src="https://github.com/Marti-code/md5/blob/master/static/magic-box.png"/>
 
 - Update A, B, C, D for the next iteration
 
