@@ -11,6 +11,10 @@ The result of MD5 is always a 128-bit hash, providing 2^128 possible unique hash
 
 ## How it works
 
-- Fetches YouTube playlist information (title, number of videos, thumbnail).
-- Downloads all videos in the playlist as audio or video.
-- Zips the downloaded files for easy download.
+### Padding
+
+MD5 operates on input data blocks of 512 bits and produces a hash of 128 bits. Since input data is rarely exactly 512 bits in length, padding is applied:
+
+- Append a 1 bit to the input
+- Add 0 bits until the input length is 448 bits (64 bits less than a multiple of 512)
+- Append the original length of the input, represented in 64 bits using the little-endian format.
