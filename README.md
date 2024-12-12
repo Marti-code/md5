@@ -54,7 +54,7 @@ Each of the 64 iterations performs the following:
 
   <img src="https://github.com/Marti-code/md5/blob/master/static/5.png"/>
 
-  Input Selection Schedule:
+Input Selection Schedule:
 
 - Round 1 (0 <= i <= 15):
   - i mod 16
@@ -86,6 +86,8 @@ Left rotation Amounts (r):
 - Round 2: r=[5,9,14,20, 5,9,14,20, 5,9,14,20, 5,9,14,20]
 - Round 3: r=[4,11,16,23, 4,11,16,23, 4,11,16,23, 4,11,16,23]
 - Round 4: r=[6,10,15,21, 6,10,15,21, 6,10,15,21, 6,10,15,21]
+
+<img src="https://github.com/Marti-code/md5/blob/master/static/5.png"/>
 
 - Update A, B, C, D for the next iteration
 
