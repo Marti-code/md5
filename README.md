@@ -54,6 +54,39 @@ Each of the 64 iterations performs the following:
 
   <img src="https://github.com/Marti-code/md5/blob/master/static/5.png"/>
 
+  Input Selection Schedule:
+
+- Round 1 (0 <= i <= 15):
+  - i mod 16
+  - Order: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+- Round 2 (16 <= i <= 31):
+  - (5 \* i + 1) mod 16
+  - Order: 1, 6, 11, 0, 5, 10, 15, 4, 9, 14, 3, 8, 13, 2, 7, 12
+- Round 3 (32 <= i <= 47):
+  - (3 \* i + 5) mod 16
+  - Order: 5, 8, 11, 14, 1, 4, 7, 10, 13, 0, 3, 6, 9, 12, 15, 2
+- Round 4 (48<= i <= 63):
+  - (7 \* i) mod 16
+  - Order: 0, 7, 14, 5, 12, 3, 10, 1, 8, 15, 6, 13, 4, 11, 2, 9
+
+Round-Specific Function F(B, C, D, i):
+
+- Round 1 (0 <= i <= 15):
+  - (B AND C) OR ((NOT B) AND D)
+- Round 2 (16 <= i <= 31):
+  - (B AND D) OR (C AND (NOT D))
+- Round 3 (32 <= i <= 47):
+  - B XOR C XOR D
+- Round 4 (48<= i <= 63):
+  - C XOR (B OR (NOT D))
+
+Left rotation Amounts (r):
+
+- Round 1: r=[7,12,17,22, 7,12,17,22, 7,12,17,22, 7,12,17,22]
+- Round 2: r=[5,9,14,20, 5,9,14,20, 5,9,14,20, 5,9,14,20]
+- Round 3: r=[4,11,16,23, 4,11,16,23, 4,11,16,23, 4,11,16,23]
+- Round 4: r=[6,10,15,21, 6,10,15,21, 6,10,15,21, 6,10,15,21]
+
 - Update A, B, C, D for the next iteration
 
   <img src="https://github.com/Marti-code/md5/blob/master/static/6-buffer-update.png"/>
